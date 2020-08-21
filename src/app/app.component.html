@@ -1,0 +1,31 @@
+<ng-container>
+  <mat-toolbar class="main-header" color="primary">
+    <button mat-icon-button (click)="sidenav.toggle()">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <h1 class="main-app-name">Responsive App</h1>
+  </mat-toolbar>
+
+  <mat-sidenav-container class="main-container">
+    <mat-sidenav #sidenav mode="side" opened class="main-sidenav" [fixedInViewport]="false">
+      <mat-nav-list>
+        <a mat-list-item routerLinkActive="active" routerLink="/table">
+          <mat-icon mat-list-icon>table_view</mat-icon>
+          <span mat-line>Tables</span>
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/simple">
+          <mat-icon mat-list-icon>phonelink</mat-icon>
+          <span mat-line>Simple Dialog</span>
+        </a>
+        <a mat-list-item routerLinkActive="active" routerLink="/forms">
+          <mat-icon mat-list-icon>dvr</mat-icon>
+          <span mat-line>Forms</span>
+        </a>
+      </mat-nav-list>
+    </mat-sidenav>
+
+    <mat-sidenav-content>
+      <router-outlet></router-outlet>
+    </mat-sidenav-content>
+  </mat-sidenav-container>
+</ng-container>
